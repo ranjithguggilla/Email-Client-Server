@@ -1,3 +1,7 @@
+[![CI](https://github.com/ranjithguggilla/Email-Client-Server/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjithguggilla/Email-Client-Server/actions)
+![Java](https://img.shields.io/badge/Java-17%2B-blue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 # simple-mail
 Beginner-friendly Java TCP email client–server with a tiny text protocol.
 
