@@ -1,4 +1,4 @@
-[![CI](https://github.com/ranjithguggilla/Email-Client-Server/actions/workflows/ci.yml/badge.svg)](https://github.com/ranjithguggilla/Email-Client-Server/actions)
+[![CI](https://github.com/ranjithguggilla/Email-Client-Server/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ranjithguggilla/Email-Client-Server/actions?query=branch%3Amain)
 ![Java](https://img.shields.io/badge/Java-17%2B-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
