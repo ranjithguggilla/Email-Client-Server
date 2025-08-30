@@ -1,27 +1,27 @@
-name: ci
+name: CI
+
 on:
   push:
-    branches: [ main ]
   pull_request:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ '17', '21' ]
+        java: [17, 21]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
-          cache: gradle
-      - name: Prepare wrapper if missing
-        run: |
-          if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
-            echo "Gradle wrapper jar missing; generating with local Gradle"
-            sudo apt-get update && sudo apt-get install -y gradle
-            gradle wrapper
-          fi
-      - name: Build server and client
-        run: ./gradlew :server:build :client:build --no-daemon
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
+
+      - name: Build (server + client)
+        run: ./gradlew --no-daemon clean :server:build :client:build
